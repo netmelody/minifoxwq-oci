@@ -22,5 +22,4 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: |
-          ${{ secrets.DOCKERHUB_USERNAME }}/minifoxwq-oci:$(date +%s)
           ${{ secrets.DOCKERHUB_USERNAME }}/minifoxwq-oci:latest
