@@ -3,5 +3,14 @@
 Creates a OCI (docker) image for running minifoxwq
 
 ```bash
-docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -h $HOST -v $HOME/.Xauthority:/root/.Xauthority --device /dev/snd docker.io/netmelody/minifoxwq-oci 
+docker run --rm -it \
+--volume /tmp/.X11-unix:/tmp/.X11-unix \
+--env DISPLAY=${DISPLAY} \
+--hostname ${HOST} \
+--volume ${HOME}/.Xauthority:/root/.Xauthority \
+--device /dev/snd \
+--env PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
+--volume ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
+--volume ${HOME}/.config/pulse/cookie:/root/.config/pulse/cookie \
+docker.io/netmelody/minifoxwq-oci 
 ```
