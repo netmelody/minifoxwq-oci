@@ -8,7 +8,7 @@ RUN apt-get update \
 FROM docker.io/ubuntu:jammy
 
 RUN apt-get update \
- && apt-get install -y ffmpeg libsm6 libxext6 sqlite3
+ && apt-get install -y ffmpeg libsm6 libxext6 sqlite3 ca-certificates
 
 COPY --from=build /minifox /opt/minifox
 ENTRYPOINT ["/opt/minifox/minifox"]
