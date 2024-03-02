@@ -12,6 +12,7 @@ docker run --rm -it \
 --env PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
 --volume ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
 --volume ${HOME}/.config/pulse/cookie:/root/.config/pulse/cookie \
+--publish 3001:3001 \
 docker.io/netmelody/minifoxwq-oci 
 ```
 
@@ -26,6 +27,6 @@ podman run --rm -it \
 --env PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
 --volume ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
 --volume ${HOME}/.config/pulse/cookie:/root/.config/pulse/cookie \
---network slirp4netns:port_handler=slirp4netns \
+--publish 3001:3001 \
 docker.io/netmelody/minifoxwq-oci
 ```
