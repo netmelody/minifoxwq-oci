@@ -2,8 +2,8 @@ FROM docker.io/ubuntu:jammy AS build
 
 RUN apt-get update \
  && apt-get install --assume-yes wget unzip \
- && wget --no-verbose https://github.com/openfoxwq/openfoxwq.github.io/releases/download/v0.9/minifox-v0.9-linux.zip \
- && unzip -qq -d minifox minifox-v0.9-linux.zip
+ && wget --no-verbose https://github.com/openfoxwq/openfoxwq.github.io/releases/download/v0.13/minifox-v0.13-linux.zip \
+ && unzip -qq -d minifox minifox-v0.13-linux.zip
 
 FROM docker.io/ubuntu:jammy
 
