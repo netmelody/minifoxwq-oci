@@ -11,5 +11,6 @@ RUN apt-get update \
  && apt-get install -y ffmpeg libsm6 libxext6 libopengl0 sqlite3 ca-certificates
 
 COPY --from=build /minifox /opt/minifox
+WORKDIR /root
 ENTRYPOINT ["/opt/minifox/minifox"]
 
