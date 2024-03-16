@@ -4,7 +4,7 @@ ENV MINIFOX_VERSION=0.14
 RUN apt-get update \
  && apt-get install --assume-yes wget unzip \
  && wget --no-verbose "https://github.com/openfoxwq/openfoxwq.github.io/releases/download/v${MINIFOX_VERSION}/minifox-v${MINIFOX_VERSION}-linux.zip" \
- && unzip -qq -d "minifox minifox-v${MINIFOX_VERSION}-linux.zip"
+ && unzip -qq -d minifox "minifox-v${MINIFOX_VERSION}-linux.zip"
 
 FROM docker.io/ubuntu:jammy
 
